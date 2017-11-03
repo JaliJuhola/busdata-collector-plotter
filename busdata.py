@@ -35,6 +35,7 @@ def collectData(collection_time, collection_intervall, line_to_search):
             jsonReturn['locations'].append({  
             'longitude': row['vehicleLocation']['longitude'],
             'latitude': row['vehicleLocation']['latitude'],
+            'speed': row['speed'],
             'time': recorded })
       i = i + 1
       time.sleep(collection_intervall)
@@ -45,6 +46,8 @@ def collectData(collection_time, collection_intervall, line_to_search):
    return
    
 
-
-collectData(100,5, '10')
+if len(sys.argv) == 4 and sys.argv[1].isdigit() and sys.argv[2].isdigit():
+   collectData((int)(sys.argv[1]),(int)(sys.argv[1]), str(sys.argv[3]))
+else:
+   collectData(40, 5, '6')
 
