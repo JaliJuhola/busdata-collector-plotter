@@ -46,8 +46,3 @@ def collectData(collection_time, collection_intervall, line_to_search):
    return
    
 
-if len(sys.argv) == 4 and sys.argv[1].isdigit() and sys.argv[2].isdigit():
-   collectData((int)(sys.argv[1]),(int)(sys.argv[1]), str(sys.argv[3]))
-else:
-   collectData(40, 5, '6')
-
